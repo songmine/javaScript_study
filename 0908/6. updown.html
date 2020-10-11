@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- javaScript -->
+    <script>
+        //1~50랜덤숫자 생성 (Math.random()만 쓰는 경우 0<=x<1의 실수 생성됨)
+        let ran = parseInt(Math.random()*50 +1); //(*50 ==> 0~50미만의 수 생성됨) +1   ==> 1~51미만의 수 생성됨 
+        console.log('랜덤수>> ', ran);
+        while(true) {   //언제끝날지 모르기 때문에 true로 설정
+            let input = prompt('숫자를 입력해주세요!');
+            
+            if (input > ran) {
+                alert('입력한 숫자보다 작은 수 입니다...');
+            }else if (input < ran){
+                alert('입력한 숫자보다 큰 수 입니다...');
+            }else if (input === ran) { 
+                console.log('정답입니다! 축하!👍');
+                break;
+            }
+        }   
+    </script>
+</body>
+</html>

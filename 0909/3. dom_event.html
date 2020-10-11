@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <form action="">
+        <input type="text" id="data">
+        <input type="button" id="btn" value="클릭">
+    </form>
+
+    <!-- 위의 버튼 클릭시 아래 입력한 글이 뜨게하자 -->
+    <p id="view"></p>
+
+
+
+    <!-- javascript -->
+    <script>
+        //클릭했을 때 input태그에 입력된 데이터를 가져와서 p태그에 출력해보자
+        //클릭했을 때 --> 클릭이벤트
+
+        //1. 적용할 대상의 정보 가져오기
+        let input = document.querySelector('#data'); //input태그가 여러개있을수있으니 해당태그의 id로 접근
+        let p = document.querySelector('#view');
+        let btn = document.querySelector('#btn');
+
+        const getData = function getData(){
+            //value속성: input태그에 입력된 값을 접근할 때
+            // - 추가로 select태그, textarea태그도 접근 가능
+
+            console.log(typeof(input));     //object타입
+            console.log(typeof(p));         //object타입
+
+            console.log('사용자가 입력한 데이터>> ', input.value);
+
+            p.innerHTML = `<h1>${input.value}</h1>`; //사용자가 입력한 값을 p태그에 대입
+
+            input.value = '';                        //빈값을 input태그에 대입
+        };
+
+        //버튼객체에 '클릭'이벤트를 적용
+        // btn.addEventListener('click',function(){ //위에 getData()로 이미 있으므로 틀만만들고 주석처리
+        //     //실행할 코드 작성
+
+        // });
+
+        //콜백함수(Callback function): 어떤 특정 상황이 끝나고 난 후 바로 실행할 수 있는 함수
+        btn.addEventListener('click', getData);     //클릭한 후(이벤트가 발생한 후) getData함수 호출해라
+    </script>
+
+</body>
+</html>

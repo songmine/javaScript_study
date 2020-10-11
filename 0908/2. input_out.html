@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    <h1>Javascript</h1>
+    <button onclick="view()">클릭</button>
+    -->
+
+
+
+    <!-- javascript -->
+    <script>
+        
+        //출력문 3가지
+        //1. 웹 페이지에 출력하는 출력문                (페이지 자체 출력)
+        //->  이벤트를 통해 실행할 때 전체 페이지를 초기화 시켜버리는 문제가 있음
+                    // function view() {
+                    //     document.write('내용출력!');
+                    // }
+        // document.write('Hello JS!');
+        
+        //2.개발자도구창(F12)->Console창에 출력         (developer tool)
+        //-> 테스트 할 때 가장 많이 사용
+       // console.log('Hello Js!');
+
+        //3. 알림창으로 출력
+        //-> 웹 페이지 실행에 방해가 되는 문제가 있음
+       // alert('Hello JS!');
+
+
+       
+        //입력문 2가지
+        //1. 키보드로부터 입력받는 입력문
+        // - String타입으로 입력값 반환
+        // var name = prompt('이름을 입력해주세요.')       //prompt는 입력받은 값을 그대로 반환한다
+        // console.log('이름 >>', name);      
+
+        //2. 확인 취소를 선택하는 입력문
+        var isChecked = confirm('회원 정보 수정을 완료하시겠습니까?');      //prompt('')처럼 ''안에는 보이게할 값
+
+        if(isChecked){
+            alert('수정이 완료되었습니다.');
+        }
+
+    </script>
+</body>
+</html>

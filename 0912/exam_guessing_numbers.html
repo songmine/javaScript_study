@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 추측 게임</title>
+    <style>
+      .success {
+        background-color: limegreen;
+        color: white;
+      }
+      .fail {
+        background-color: tomato;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>숫자 추측 게임</h1>
+
+    <p>
+      1부터 100까지의 숫자 중에서 하나의 숫자를 뽑았습니다.<br />
+      당신이 추측할 수 있는 기회는 10번 입니다.<br />
+      추측한 숫자가 높다거나 낮다는 아래에서 표시됩니다.<br />
+    </p>
+
+    <!-- 
+      text타입의 input태그는 Enter키를 누르면 자동으로 서버에 전달하는 submit기능을 포함하고 있기 때문에
+      form태그에 onsubmit속성을 이용해서 false로 지정하면 서버전달기능을 동작하지 못하게 막는다.
+      (submit타입도 마찬가지)
+     -->
+                    <!-- submit기능 막았음 -->
+    <form action="" onsubmit="return false">  
+      <input type="text" id="answer" />
+      <input type="button" id = "btn" value="추측" />
+    </form>
+
+    <p id="before_result">이전 결과:</p>
+    <p id="result"></p>
+
+    <script src="./exam_guessing_numbers.js"></script>
+
+  </body>
+</html>

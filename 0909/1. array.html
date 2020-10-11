@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <!-- javascript -->
+    <script>
+        //Array(배열) : 같이종류의 데이터를 한번에 저장하는 자료형
+        // - 가변의 길이
+        //1.배열선언
+        let array1 = new Array();   //---> ()안에 크기 지정한 상태로 만들어짐. 값할당되지않으면 비어있음
+        let array2 = [1,2]; //가장 많이 사용되는 방법
+        let array3 = []; //많이 사용 ..+---> 가변성. java의 arrayList와 비슷
+
+        //2.배열초기화 & 접근(인덱싱)
+        let fruits = ['🥝','🥥','🍇'];
+        console.log(fruits[0]);                     //해당인덱스의 값 출력
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+        console.log(fruits.length);                 //배열의 크기
+        console.log(fruits[3]);                     //--->undefined 출력됨
+        console.log(fruits[fruits.length-1]);       //마지막 값 출력하기
+        console.log(fruits);                        //값들 한번에 출력하기
+
+        //3.배열&반복
+        //3-1.for (인덱스값활용하여 출력하고자 한다)
+        for(let i=0; i<fruits.length; i++) {
+            console.log(fruits[i]);
+        }
+        //3-2.for of (단순히 순차적으로 출력하고싶다)
+        // for num in 문자열or리스트: ....python과 비슷
+        for(let fruit of fruits) {
+            console.log(fruit);
+        }
+        //3-3.forEach : index 생략가능  (인덱스값활용(출력)하여 출력하고자 한다)
+        fruits.forEach(function(fruit, index){       //배열에들어있는데이터, 인덱스(는필요없으면 안써도됨)
+            console.log(index, fruit);
+        });
+
+        //4.배열에 데이터 추가, 수정, 삭제
+        //4-1. 추가
+        fruits.push('🍉');  //맨 뒤에서부터 데이터를 추가
+        fruits.push('🍊');
+        fruits.push('🍌');
+        fruits.push('🍉','🍊','🍌');
+        console.log(fruits);
+
+        //4-2.수정
+        fruits[2] = '🍓';   //새로운 데이터로 대입하여 수정
+        console.log(fruits);
+
+        //4-3.삭제
+        fruits.pop();       //맨 뒤에서부터 데이터를 삭제
+        fruits.pop();
+        fruits.pop();
+        console.log(fruits);
+
+        //splice(startIndex, deleteCount) 시작인덱스, 삭제할갯수
+        //갯수를 작성하지 않으면 첫 번째 데이터를 제외한 모든 데이터를 삭제
+        //fruits.splice(1);  
+        //fruits.splice(1,2);
+
+        //splice(startIndex, deleteCount, ...items)
+        // - 삭제한 위치에 새로운 데이터를 추가하는 기능
+        fruits.splice(1,1,'🍋','🍑'); 
+        console.log(fruits);
+
+
+    </script>
+</body>
+</html>

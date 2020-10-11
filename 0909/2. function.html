@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- javascript -->
+    <script>
+        //Function(함수)
+        //1.중복되는 코드 최소화 목적 --> 재사용성
+        //2.실행 코드를 블록화(모듈화) --> 코드 가독성 향상
+        //3.문제 발생 또는 수정작업과 같이 유지보수 용이
+
+        //Function의 기본 구조
+        //1.함수선언문  
+        ///-->함수 hoisting 일어나서 이 위에 greet 호출해서 문제없음(다만 --> 코드의 전체적인 흐름에 영향 줄 있음)
+            // console.log('안녕하세요. 오송민입니다.');
+        // }
+        
+        //매개변수 만들 때 let키워드 사용 X
+            function greet(name){
+                // console.log('안녕하세요. '+name+'입니다.');
+
+                //템플릿문자열(=백틱) : 문자열과 변수를 같이 사용할 수 있도록 만든 문법
+                //사용법: `blah${변수명}blah`
+                console.log(`안녕하세요. ${name}입니다.`);
+            }
+        
+        //함수호출(실행)
+        greet('오송민');
+        greet('포니팍');
+        greet('슬파고');
+        greet('호형큄');
+
+        //greet2('정형'); //greet2는 아직 선언 하기 전이므로 실행되지 않음
+
+        //2.함수 표현식   -->더 권장됨
+        //function을 object로 인식 __함수자체가 '값'으로써 정의되므로 }이후 ;필수 
+        //함수hoisting이 일어나지 않기 때문에 선언 전에는 실행할 수 없음!!
+        const greet2 = function greet2(name){
+            console.log(`안녕하세요. ${name}입니다.`);
+        };
+
+        greet2('포니');
+
+        
+        //직사각형의 면적을 구하는 getRectArea() 함수를 구현
+        const getRectArea = function getRectArea(width, height){
+            return width * height;
+        };
+        console.log('직사각형의 면적>> ', getRectArea(3,4));
+
+        //가변매개변수를 가진 함수구조
+        const numbers = function number(...nums){
+            console.log(nums);
+        };
+
+        numbers(1);
+        numbers(1,2);
+        numbers(1,2,3);
+
+    </script>
+</body>
+</html>

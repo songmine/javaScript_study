@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        Ctrl + / : 주석
+        Ctrl + Shift + K : 한 줄 삭제
+        Ctrl + k + f : 코드정렬
+     -->
+
+    <!-- Emmet 문법
+    h1*5                    : h1태그를 5개 생성
+    ul>li*3                 : li태그를 3개 생성
+    table>(tr>td*3)*2       : 2x3 형태의 테이블 생성
+    p#txt                   : id가 txt인 p태그 생성
+    p.txt                   : class가 txt인 p태그 생성
+    .                       : div태그 생성
+    h1{Hello World}         : 'Hello World'텍스트를 가진 h1태그 생성
+    lorem                   : 테스트용 텍스트문장을 생성(내용은 랜덤)
+    -->
+
+    <h1><a href="#">Front-end Developer</a></h1> 
+
+    <button onclick="pageDesign()">DESIGN</button>
+    <button onclick="pageDefault()">DEFAULT</button>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+    </ul>
+
+    <h1>Javascript</h1>
+    
+    <p>
+    Javascript는 웹 페이지를 동적인 페이지로 만들기 위해 고안된 언어입니다.<br/>차근차근 Javascript에 대해서 배워보도록 합니다.
+    </p>
+
+
+    <script>
+        //javascript 코드 작성  (페이지 조작에 특화된 언어 javascript)
+        function pageDesign(){                                                //반환자료 따로 안씀
+            //클릭했을 때 웹 페이지의 배경색과 글자색 변경
+            //스타일 적용할 대상에 접근
+            document.querySelector('body').style.backgroundColor = 'green'     //접근할 대상(태그)을 찾아줌
+            document.querySelector('body').style.color = 'yellow';
+            document.querySelector('body').style.fontWeight = 'bold';
+            document.querySelector('a').innerHTML = '프론트엔드개발자';
+        }     
+
+        function pageDefault(){
+            //클릭했을 때 웹 페이지 초기화
+            document.querySelector('body').style.backgroundColor = 'white'     //접근할 대상(태그)을 찾아줌
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('body').style.fontWeight = 'none';
+            document.querySelector('a').innerHTML = 'Front-end Developer';
+        }
+    </script>
+
+
+    
+   
+
+
+</body>
+</html>
